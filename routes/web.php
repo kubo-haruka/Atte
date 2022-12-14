@@ -27,14 +27,3 @@ Route::post('/home', [StampController::class, 'stopAttendace'])->middleware('aut
 Route::post('/home', [StampController::class, 'startRest'])->middleware('auth');
 Route::post('/home', [StampController::class, 'stopRest'])->middleware('auth');
 Route::get('/attendace', [StampController::class, 'attendace']);
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
