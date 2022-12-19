@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\RegisterdUserController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\StampController;
 
@@ -16,8 +16,8 @@ use App\Http\Controllers\Auth\StampController;
 |
 */
 
-Route::get('/register', [RegisterdUserController::class, 'create']);
-Route::post('/register', [RegisterUserController::class, 'store']);
+Route::get('/register', [RegisteredUserController::class, 'create']);
+Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::get('/login', [AuthenticatedSessionController::class, 'login']);
 Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth');
