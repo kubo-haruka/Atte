@@ -89,12 +89,16 @@
         <th>勤務時間</th>
       </tr>
       <tr>
-        @foreach
-        <td>{{ $name }}</td>
-        <td>{{ $startattendace }}</td>
-        <td>{{ $stopattendace }}</td>
-        <td>{{ $rest }}</td>
-        <td>{{ $attendace }}</td>
+        @foreach ($users as $user)
+          <td>{{ $user->name }}</td>
+        @endforeach
+        @foreach ($attendances as $attendance)
+          <td>{{ $attendance->start_time }}</td>
+          <td>{{ $attendance->end_time }}</td>
+        @endforeach
+        @foreach ($rests as $rest)
+          <td>{{ $rest->start_time }}</td>
+          <td>{{ $rest->end_time }}</td>
         @endforeach
       </tr>
     </table>

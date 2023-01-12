@@ -11,16 +11,10 @@ class StampController extends Controller
 {
     public function attendace()
     {
-        return view('attendace');
-    }
-
-    public function create(Request $request)
-    {
-        $name = User::all();
-        $startattendace = Attendace::start_time();
-        $stopattendace = Attendace::end_time();
-        $rest = 
-        $attendace = 
-        return redirect('/');
+        $users = User::all();
+        $attendances = Attendace::all();
+        $rests = Rests::all();
+        $param = ['users' => $users, 'attendances' => $attendances, 'rests' => $rests];
+        return view('attendace',$param);
     }
 }

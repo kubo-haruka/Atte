@@ -19,6 +19,10 @@ class Attendace extends Model
         'date',
         'start_time',
         'end_time'
-    
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }
