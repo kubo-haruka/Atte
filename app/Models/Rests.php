@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Rests extends Model
 {
@@ -26,5 +27,16 @@ class Rests extends Model
     public function user()
     {
         return $this->belongsTo('App\Models\User');
+    }
+
+    public function rest_time()
+    {
+        $start = new Carbon($this->start_time);
+        $end = new Carbon($this->end_time);
+        $seconds = $end->diffInSeconds($start);
+        $minutes = $end->diffInMinutes($start);
+        $hours = $end->diffInHours($start);
+        echo $this->$hours, ':', $minutes, ':', $seconds;
+        return view('rest_time', ['rest_time' => $this]);
     }
 }

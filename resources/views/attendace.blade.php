@@ -93,8 +93,8 @@
         <td>{{ $attendance->user->name }}</td>
         <td>{{ $attendance->start_time }}</td>
         <td>{{ $attendance->end_time }}</td>
-        <td>{{ $attendance->rest->start_time }}</td>
-        <td>{{ $attendance->rest->end_time }}</td>
+        <td>{{ $attendance->rest->rest_time() }}</td>
+        <td>{{ $attendance->attendance_time() }}</td>
       </tr>
       @endforeach
     </table>
