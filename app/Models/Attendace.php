@@ -25,4 +25,9 @@ class Attendace extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function rest()
+    {
+        return $this->belongsTo('App\Models\Rests');
+    }
 }

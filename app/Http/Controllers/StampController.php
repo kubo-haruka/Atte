@@ -11,10 +11,7 @@ class StampController extends Controller
 {
     public function attendace()
     {
-        $users = User::all();
         $attendances = Attendace::all();
-        $rests = Rests::all();
-        $param = ['users' => $users, 'attendances' => $attendances, 'rests' => $rests];
-        return view('attendace',$param);
+        return view('attendace',['attendances' => $attendances]);
     }
 }
