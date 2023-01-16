@@ -16,6 +16,7 @@ class CreateAttendacesTable extends Migration
         Schema::create('attendaces', function (Blueprint $table) {
             $table->bigIncrements('id')->unique();
             $table->integer('user_id')->constrained('users{id}');
+            $table->integer('rest_id')->constrained('rests{id}');
             $table->date('date')->nullable();
             $table->time('start_time')->nullable();
             $table->time('end_time')->nullable();

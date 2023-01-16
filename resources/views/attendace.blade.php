@@ -88,15 +88,15 @@
         <th>休憩時間</th>
         <th>勤務時間</th>
       </tr>
+      @foreach ($attendances as $attendance)
       <tr>
-        @foreach ($attendances as $attendance)
         <td>{{ $attendance->user->name }}</td>
         <td>{{ $attendance->start_time }}</td>
         <td>{{ $attendance->end_time }}</td>
         <td>{{ $attendance->rest->start_time }}</td>
         <td>{{ $attendance->rest->end_time }}</td>
-        @endforeach
       </tr>
+      @endforeach
     </table>
   </div>
   <div class="footer">
