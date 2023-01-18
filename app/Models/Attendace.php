@@ -42,7 +42,6 @@ class Attendace extends Model
         $seconds = $end->diffInSeconds($start);
         $minutes = $end->diffInMinutes($start);
         $hours = $end->diffInHours($start);
-        echo $this->$hours,':',$minutes,':',$seconds;
-        return view('attendance_time',['attendanc_time' => $this]);
+        echo $hours,':',$minutes,':',$seconds;
     }
 }
