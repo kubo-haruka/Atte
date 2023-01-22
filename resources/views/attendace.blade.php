@@ -93,8 +93,8 @@
         <td>{{ $attendance->user->name }}</td>
         <td>{{ $attendance->start_time }}</td>
         <td>{{ $attendance->end_time }}</td>
-        @if($attendances->isEmpty())
-        <td>{{ $attendance->rests->rest_time() }}</td>
+        @if($attendances->rest=null)($attendances->rest->rest_time=0)
+        <td>{{ $attendance->rest->rest_time() }}</td>
         @endif
         <td>{{ $attendance->attendance_time() }}</td>
       </tr>

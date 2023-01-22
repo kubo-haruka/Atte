@@ -42,6 +42,6 @@ class Attendace extends Model
         $seconds = $end->diffInSeconds($start);
         $minutes = $end->diffInMinutes($start);
         $hours = $end->diffInHours($start);
-        echo $hours,':',$minutes,':',$seconds;
+        echo $hours,':',$minutes-$hours*60,':',$seconds-$minutes*60;
     }
 }
