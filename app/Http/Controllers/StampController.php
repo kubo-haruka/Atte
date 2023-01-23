@@ -14,4 +14,9 @@ class StampController extends Controller
         $attendances = Attendace::all();
         return view('attendace',['attendances' => $attendances]);
     }
+
+    public function index()
+    {
+        return view('home');
+    }
 }
