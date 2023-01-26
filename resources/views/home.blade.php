@@ -45,6 +45,7 @@
   }
 
   .card {
+
     display: flex;
     justify-content: center;
   }
@@ -57,6 +58,7 @@
     border: 1px solid white;
     border-radius: 5px;
     background-color: white;
+    font-size: large;
   }
 
   .card_right {
@@ -66,11 +68,7 @@
     border: 1px solid white;
     border-radius: 5px;
     background-color: white;
-  }
-
-  p {
-    margin: 0 auto;
-    text-align: center;
+    font-size: large;
   }
 
   .footer {
@@ -99,28 +97,38 @@
   </div>
 
   <div class="main">
+    @if (Auth::check())
     <div class="message">
-      さんお疲れ様です！
+      {{ Auth::user()->name }}さんお疲れ様です！
+    </div>
+    @else
+    <div class="message">
+      ログインしてください（<a href="/login">ログイン</a>｜<a href="/register">登録</a>）
+    </div>
+    @endif
+    <div class="card">
+      <form action="/home" method="POST">
+        @csrf
+        <input class="card_left" type="submit" value="勤務開始" name="start_time">
+      </form>
+      <form action="home" method="POST">
+        @csrf
+        <input class="card_right" type="submit" value="勤務終了" name="end_time">
+      </form>
     </div>
     <div class="card">
-      <div class="card_left">
-        <p>勤務開始</p>
-      </div>
-      <div class="card_right">
-        <p>勤務終了</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card_left">
-        <p>休憩開始</p>
-      </div>
-      <div class="card_right">
-        <p>休憩終了</p>
-      </div>
+      <form action="home" method="POST">
+        @csrf
+        <input class="card_left" type="submit" value="休憩開始" name="start_time">
+      </form>
+      <form action="home" method="POST">
+        @csrf
+        <input class="card_right" type="submit" value="休憩終了" name="end_time">
+      </form>
     </div>
   </div>
 
   <div class="footer">
-    <p><small>Atte, inc.</small></p>
+    <small>Atte, inc.</small>
   </div>
 </body>
