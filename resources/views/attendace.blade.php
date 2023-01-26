@@ -18,18 +18,22 @@
     padding-left: 40px;
   }
 
-  nav {
+  .nav {
     margin-top: 5px;
   }
 
-  li {
+  .ul {
+    padding-left: 0px;
+  }
+
+  .li {
     display: inline-block;
     margin-left: 30px;
     margin-right: 30px;
     text-decoration: none;
   }
 
-  li a {
+  .li a {
     text-decoration: none;
   }
 
@@ -74,11 +78,11 @@
 <body>
   <div class="hedder">
     <h1>Atte</h1>
-    <nav>
-      <ul>
-        <li><a href="/home">ホーム</a></li>
-        <li><a href="/attendace">日付一覧</a></li>
-        <li><a href="/logout">ログアウト</a></li>
+    <nav class="nav">
+      <ul class="ul">
+        <li class="li"><a href="/home">ホーム</a></li>
+        <li class="li"><a href="/attendace">日付一覧</a></li>
+        <li class="li"><a href="/logout">ログアウト</a></li>
       </ul>
     </nav>
   </div>
@@ -106,6 +110,7 @@
       </tr>
       @endforeach
     </table>
+    {{ $attendances->links('vendor.pagination.bootstrap-4') }}
   </div>
   <div class="footer">
     <p><small>Atte, inc.</small></p>

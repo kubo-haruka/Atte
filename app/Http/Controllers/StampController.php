@@ -15,6 +15,7 @@ class StampController extends Controller
     public function attendace()
     {
         $attendances = Attendace::all();
+        $attendances = Attendace::Paginate(2);
         return view('attendace',['attendances' => $attendances]);
     }
 
