@@ -49,9 +49,13 @@
     border-top: solid 1px #808080;
   }
 
-  th,
+  th {
+    padding: 30px 0;
+  }
+
   td {
     padding: 30px 0;
+    text-align: center;
   }
 
   .footer {
@@ -93,8 +97,10 @@
         <td>{{ $attendance->user->name }}</td>
         <td>{{ $attendance->start_time }}</td>
         <td>{{ $attendance->end_time }}</td>
-        @if($attendances->rest=null)($attendances->rest->rest_time=0)
-        <td>{{ $attendance->rest->rest_time() }}</td>
+        @if($attendance->rest != null)
+        <td>{{ $attendance->rest->rest_time() }} </td>
+        @else
+        <td>00:00:00</td>
         @endif
         <td>{{ $attendance->attendance_time() }}</td>
       </tr>
