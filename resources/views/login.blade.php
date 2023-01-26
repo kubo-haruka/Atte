@@ -88,12 +88,12 @@
       @csrf
       <div class="form_text">
         <p><input type="email" name="email" placeholder="メールアドレス"></p>
-        <p><input type="password" name="password" placeholder="パスワード" required autocomplete="new-password"></p>
+        <p><input type="password" name="password" placeholder="パスワード"></p>
         <p><input class="submit" type="submit" name="submit" value="ログイン"></p>
       </div>
     </form>
     <div class="login">
-      <p>アカウントをお持ちの方はこちらから</p>
+      <p>アカウントをお持ちでない方はこちらから</p>
       <a href="/register">会員登録</a>
     </div>
   </div>
