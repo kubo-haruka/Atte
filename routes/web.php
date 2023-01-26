@@ -22,6 +22,9 @@ Route::get('/login', [AuthenticatedSessionController::class, 'login']);
 Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth');
 Route::get('/home', [StampController::class, 'index'])->middleware('auth');
+Route::get('/', function(){
+  return view('home');
+})->name('login');
 Route::post('/home', [StampController::class, 'startAttendace'])->middleware('auth');
 Route::post('/home', [StampController::class, 'stopAttendace'])->middleware('auth');
 Route::post('/home', [StampController::class, 'startRest'])->middleware('auth');
